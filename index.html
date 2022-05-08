@@ -17,7 +17,7 @@
             <!-- <audio id="audio" src="css/thankyou.mp3" controls autoplay>
                 <source src="css/thankyou.mp3" type="audio/mp3">
             </audio> -->
-            <audio id="audio" src="css/thankyou.mp3" controls autoplays></audio>
+            <audio id="audio" src="css/thankyou.mp3" controls autoplay></audio>
             <div class="home-slider">
                 <div class="carousel-cell"><img src="css/skin/1.jpg" alt="" /></div>
                 <div class="carousel-cell"><img src="css/skin/2.jpg" alt="" /></div>
@@ -27,10 +27,13 @@
             </div>
         </section>
         <div class="letter">
-            <p>Hello Em nè,</p>
-            <p>Hôm nay là một ngày đặc biệt, anh muốn gửi lời cảm ơn đến một người đã mang một sứ mệnh cao cả, đưa em đến với thế giới này. Hôm nay là ngày hạnh phúc nhất của Mẹ và Ba, sau hơn 9 tháng nâng niu, chăm sóc cẩn thận cho một mầm sống, và rồi ngày này, cách đây 27 năm về trước, một em bé đã được sinh ra, mang một sứ mệnh đặc biệt của Thượng Đế nhưng lại không được cho biết trước. Hôm nay là ngày nhớ ơn về Ba và Mẹ. Anh xin gửi lời tri ân tới Ba Mẹ em, đã cho anh thêm một nhân duyên để anh được gặp em, yêu em và thay đổi. Có lẽ để kể hết ra thì chắc dài lắm nên thôi anh không kể nữa nhưng chắc em cũng còn những kỷ niệm, cảm nhận được những trải nghiệm, những khoảnh khắc, những cảm xúc đầy đủ buồn vui, mừng giận, thương ghét..vv.</p>
+            <p>Hello Em thân mến,</p>
+            <p>Hôm nay là một ngày đặc biệt, một người với một sứ mệnh cao cả, đưa em đến với thế giới này. Hôm nay là ngày hạnh phúc nhất của Mẹ và Ba và của cả Gia đình. Sau bao nhiêu ngày tháng vất vả chăm sóc cẩn thận cho một mầm sống, và rồi ngày này cách đây 27 năm về trước, một em bé đã được sinh ra, mang nhiều sứ mệnh đặc biệt của Thượng Đế nhưng vì đang còn ham vui quá, mải chơi quá nhất thời còn quên chưa thể nhớ ra ^^.</p>
+            <p>Ngày hôm nay, một ngày có ý nghĩa rất lớn. Anh xin gửi lời tri ân tới Mẹ và Ba em, đã tạo cho Anh thêm một nhân duyên để Anh được gặp Em, yêu Em và bước đi cùng em trên một đoạn đường, không dài, không ngắn, đủ để nhận ra, đủ để thay đổi. Có lẽ để kể hết ra thì chắc dài lắm nên anh sẽ không thể nói ở đây lúc này. Những trải nghiệm, những khoảnh khắc, địa điểm, những cảm xúc đầy đủ buồn vui, mừng giận, thương ghét..vv hẳn là khó mà quên đi trong một sớm một chiều được. Tất cả giờ chỉ còn là những kỷ niệm thật đẹp.</p>
+            <p>Tất cả mọi thứ đến với nhau đều có nguyên nhân và anh tin chắc rằng, chúng ta vẫn chưa biết hết được sự kỳ diệu của những điều đã đến với chúng ta. Mọi thứ đến và đi đều có một ý nghĩa rất lớn, khổ đau hay hạnh phúc đều rất quan trọng và đáng có.</p>
+            <p>Chuyến tàu đã tới trạm, chúng ta phải tạm chia tay tại đây. Đoạn đường phía trước biết còn gặp nhau hay không khó mà nói trước được, cũng đừng chờ, đừng hy vọng vì cuộc hẹn tới đã được Thượng đế sắp đặt rồi, thời gian có thể là năm sau, vài chục năm sau hay kể cả kiếp sau cũng chẳng quan trọng. Quan trọng là vẫn sẽ gặp lại thôi - chắc chắn.</p>
             <p>Một lần nữa, cảm ơn Mẹ và Ba, cảm ơn Em đã thương anh.</p>
-            <p>Happy birthday to you!</p>
+            <p class="sig">Happy birthday to you!</p>
         </div>
         <div class="no-content"></div>
     </div>
@@ -39,9 +42,9 @@
         function play() {
             document.getElementById("audio").play();
         }
-        $('.letter').on('click', function(){play()});
-        $('.letter').on('mouseover', function() {play()});
-        $(".letter, body").bind("touchstart touchend", function() {play()});
+        $('.body').on('click', function(){play()});
+        $('.body').on('mouseover', function() {play()});
+        $(".body").bind("touchstart touchend", function() {play()});
         $(window).on('load',function() {
             $('.home-slider').flickity({
                 contain: true,
