@@ -1,0 +1,125 @@
+.carousel-cell {
+	width: 100%;
+}
+.flickity-enabled {
+	position: relative;
+	&:focus {
+		outline: 0;
+	}
+	&.is-draggable {
+		-webkit-tap-highlight-color: transparent;
+		user-select: none;
+		.flickity-viewport {
+			cursor: move;
+			cursor: -webkit-grab;
+			cursor: grab;
+			&.is-pointer-down {
+				cursor: -webkit-grabbing;
+				cursor: grabbing;
+			}
+		}
+	}
+}
+.flickity-viewport {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+.flickity-slider {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.flickity-prev-next-button {
+	width: var(--button-size, 40px);
+	height: var(--button-size, 40px);
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	border: none;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	outline: none !important;
+	transition: all 0.3s ease;
+	box-shadow: 0 3px 15px -3px rgba(#000,.35);
+
+	&:before {
+        content: '';
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23252525' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+	    @include absolute(0,0,0,0);
+	    margin: auto;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	}
+
+	&.previous {
+		left: .375rem;
+		&:before {
+			transform: scale(-1,1);
+		}
+	}
+	&.next {
+		right: .375rem;
+		background-size: 14px;
+	}
+	.flickity-button-icon {
+		@include absolute(0,0,0,0);
+		margin: auto;
+		width: var(--button-font-size, 14px);
+		fill: var(--button-color);
+		display: none;
+	}
+	&:hover {
+		cursor: pointer;
+		svg {
+			fill: var(--button-color-hover, #fff);
+		}
+	}
+	&:disabled {
+		opacity: 0;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
+.flickity-rtl {
+	.flickity-prev-next-button {
+		&.previous {
+			left: auto;
+			right: .5rem;
+		}
+		&.next {
+			right: auto;
+			left: .5rem;
+		}
+	}
+	.flickity-page-dots {
+		direction: rtl;
+	}
+}
+.flickity-page-dots {
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	line-height: 1;
+	.dot {
+		display: inline-block;
+		width: var(--dot-size, 8px);
+		height: var(--dot-size, 8px);
+		margin: 0 4px;
+		background: var(--dot-bg, #000);
+		border-radius: 50%;
+		opacity: .25;
+		cursor: pointer;
+		&.is-selected {
+			opacity: 1;
+		}
+		&:only-child {
+			display: none;
+		}
+	}
+}

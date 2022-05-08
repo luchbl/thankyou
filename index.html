@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Thank You!</title>
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="home-slider-o">
+            <!-- <audio id="audio" src="css/thankyou.mp3" controls autoplay>
+                <source src="css/thankyou.mp3" type="audio/mp3">
+            </audio> -->
+            <audio id="audio" src="css/thankyou.mp3" controls autoplays></audio>
+            <div class="home-slider">
+                <div class="carousel-cell"><img src="css/skin/1.jpg" alt="" /></div>
+                <div class="carousel-cell"><img src="css/skin/2.jpg" alt="" /></div>
+                <div class="carousel-cell"><img src="css/skin/3.jpg" alt="" /></div>
+                <div class="carousel-cell"><img src="css/skin/4.jpg" alt="" /></div>
+                <div class="carousel-cell"><img src="css/skin/5.jpg" alt="" /></div>
+            </div>
+        </section>
+        <div class="letter">
+            <p>Hello Em nè,</p>
+            <p>Hôm nay là một ngày đặc biệt, anh muốn gửi lời cảm ơn đến một người đã mang một sứ mệnh cao cả, đưa em đến với thế giới này. Hôm nay là ngày hạnh phúc nhất của Mẹ và Ba, sau hơn 9 tháng nâng niu, chăm sóc cẩn thận cho một mầm sống, và rồi ngày này, cách đây 27 năm về trước, một em bé đã được sinh ra, mang một sứ mệnh đặc biệt của Thượng Đế nhưng lại không được cho biết trước. Hôm nay là ngày nhớ ơn về Ba và Mẹ. Anh xin gửi lời tri ân tới Ba Mẹ em, đã cho anh thêm một nhân duyên để anh được gặp em, yêu em và thay đổi. Có lẽ để kể hết ra thì chắc dài lắm nên thôi anh không kể nữa nhưng chắc em cũng còn những kỷ niệm, cảm nhận được những trải nghiệm, những khoảnh khắc, những cảm xúc đầy đủ buồn vui, mừng giận, thương ghét..vv.</p>
+            <p>Một lần nữa, cảm ơn Mẹ và Ba, cảm ơn Em đã thương anh.</p>
+            <p>Happy birthday to you!</p>
+        </div>
+        <div class="no-content"></div>
+    </div>
+    <script src="js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript">
+        function play() {
+            document.getElementById("audio").play();
+        }
+        $('.letter').on('click', function(){play()});
+        $('.letter').on('mouseover', function() {play()});
+        $(".letter, body").bind("touchstart touchend", function() {play()});
+        $(window).on('load',function() {
+            $('.home-slider').flickity({
+                contain: true,
+                autoPlay: 4000,
+                pauseAutoPlayOnHover: false,
+                wrapAround: true,
+                pageDots: false,
+                prevNextButtons: false,
+            });
+        })
+    </script>
+</body>
+
+</html>
