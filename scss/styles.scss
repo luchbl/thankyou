@@ -47,6 +47,9 @@ body {
     .flickity-slider {
         transform: none !important;
     }
+	.flickity-page-dots {
+		bottom: 2rem;
+	}
 }
 .letter {
 	position: relative;
@@ -57,13 +60,11 @@ body {
 	min-height: 100%;
 	max-width: 480px;
 	margin: auto;
-/* 	text-align: justify; */
 }
 .sig {
 	font-family: $font2;
 	font-size: 2.5rem;
 	text-align: right;
-	line-height: 1.4;
 }
 .no-content {
 	height: 100vh;
@@ -84,4 +85,19 @@ img {
 }
 .img-footer {
 	margin: 0 -2rem -2.5rem;
+}
+.img-header {
+	margin: 0 -2rem;
+}
+@media (min-width: 768px) {
+	.letter {
+		max-width: 588px;
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	.img-footer,
+	.img-header {
+		margin-left: -4rem;
+		margin-right: -4rem;
+	}
 }
