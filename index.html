@@ -12,15 +12,21 @@
 </head>
 
 <body id="body">
+    <div class="modal" id="modal" style="background-image: url('css/skin/1bg.webp');">
+        <div class="modal-icon"><img src="css/skin/letter.png" alt=""></div>
+        <div class="title font">Happy birthday to you!</div>
+    </div>
+    <div class="overlay"></div>
     <div class="wrapper">
         <section class="home-slider-o">
-            <audio id="audio" src="css/thankyou.mp3"  type="audio/mpeg" controls autoplay loop></audio>
+            <audio id="audio" src="css/thankyou.mp3"  type="audio/mpeg" controls autoplay></audio>
             <div class="home-slider">
                 <div class="carousel-cell"><img src="css/skin/1.jpg" alt="" /></div>
                 <div class="carousel-cell"><img src="css/skin/2.jpg" alt="" /></div>
                 <div class="carousel-cell"><img src="css/skin/3.jpg" alt="" /></div>
                 <div class="carousel-cell"><img src="css/skin/4.jpg" alt="" /></div>
                 <div class="carousel-cell"><img src="css/skin/5.jpg" alt="" /></div>
+                <div class="carousel-cell"><img src="css/skin/6.jpg" alt="" /></div>
             </div>
         </section>
         <div class="letter">
@@ -31,6 +37,7 @@
             <p>Tất cả mọi thứ đến với nhau đều có nhân duyên và anh tin chắc rằng, chúng ta vẫn chưa biết hết được sự kỳ diệu của những điều đã đến với chúng ta. Mọi thứ đến và đi đều có một ý nghĩa rất lớn, khổ đau hay hạnh phúc đều rất quan trọng và đáng có.</p>
             <p>Chuyến tàu đã tới trạm rồi, tuy chúng ta đã phải chia tay để mỗi người lên một con tàu riêng khác. Trạm tiếp theo biết đâu mình sẽ lại được gặp nhau, nhưng với vai trò gì thì chưa ai biết trước được. Nên cũng đừng chờ, đừng hy vọng vì cuộc gặp lần tới đã được Thượng đế sắp đặt hết cả rồi, thời gian và địa điểm chỉ có Thượng Đế mới biết, có thể trong đời nay hay thậm chí là kiếp sau cũng chẳng quan trọng. Quan trọng là vẫn sẽ gặp lại thôi - chắc chắn là như vậy.</p>
             <p>Một lần nữa, cảm ơn Mẹ và Ba, cảm ơn Em đã thương anh.</p>
+            <div class="text-center" style="margin-bottom: -2.5rem; margin-top: 2rem;"><img src="css/skin/cake.png" alt="" width="150px"></div>
             <p class="sig font text-center">Happy birthday to you!</p>
             <div class="img-footer"><img src="css/skin/tulip.png" alt=""></div>
         </div>
@@ -38,6 +45,16 @@
     </div>
     <script src="js/flickity.pkgd.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(window).on('load', function() {
+            $('#modal').addClass('loaded');
+        });
+        $(document).ready(function() {
+            $('.modal-icon').on('click', function() {
+                $('#modal').addClass('hide');
+            })
+        })
+    </script>
 </body>
 
 </html>

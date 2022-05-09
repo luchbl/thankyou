@@ -33,9 +33,3 @@ document.getElementById('audio').play()
 document.onclick=function() {
     document.getElementById("audio").play()
 }
-document.onscroll=function() {
-    document.getElementById("audio").play()
-}
-window.onload = function() {
-    document.getElementById("audio").play();
-}
