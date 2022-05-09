@@ -14,7 +14,10 @@
 <body id="body" style="overflow: hidden;">
     <div class="modal" id="modal" style="background-image: url('css/skin/1bg.webp');">
         <div class="modal-icon"><img src="css/skin/letter.png" alt=""></div>
-        <div class="title font">Happy birthday to you!</div>
+        <div class="title font"><img src="css/skin/icon.png" alt="" style="position: static; width: 45px;">Happy birthday to you!</div>
+        <video class="resizelistener" controlslist="nodownload" preload="auto" data-stylerecorder="true" autoplay muted playsinline loop sposter="css/skin/1bg.webp">
+            <source src="css/skin/video.mp4" type="video/mp4" data-stylerecorder="true">Your browser does not support the 
+        </video>
     </div>
     <div class="overlay"></div>
     <div class="wrapper">
@@ -52,7 +55,7 @@
         $(document).ready(function() {
             $('.modal-icon').on('click', function() {
                 $('#modal').addClass('hide');
-                $('body').removeAttr('style');
+                $('body').removeAttr('style').addClass('active');
             })
         })
     </script>
