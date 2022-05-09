@@ -50,8 +50,6 @@ body {
 		width: 85px;
 		display: block;
 		@include absolute(70%,0,null,10px);
-		opacity: 0;
-		transform: scale(0);
 		animation: pulse 1s infinite 2s;
 	}
 	.title {
@@ -69,11 +67,6 @@ body {
 		.modal-icon {
 			background: rgba(#000,.4);
 			transition: background 1.5s ease .2s;
-		}
-		img {
-			opacity: 1;
-			transform: none;
-			transition: all .5s ease .75s;
 		}
 		.title {
 			opacity: 1;

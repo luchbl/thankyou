@@ -29,7 +29,6 @@ Audio.prototype.play = (function (play) {
 
 // // Try automatically playing our audio via script. This would normally trigger and error.
 document.getElementById('audio').play()
-
 document.onclick=function() {
     document.getElementById("audio").play()
 }

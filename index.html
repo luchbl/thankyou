@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
-<body id="body">
+<body id="body" style="overflow: hidden;">
     <div class="modal" id="modal" style="background-image: url('css/skin/1bg.webp');">
         <div class="modal-icon"><img src="css/skin/letter.png" alt=""></div>
         <div class="title font">Happy birthday to you!</div>
@@ -52,6 +52,7 @@
         $(document).ready(function() {
             $('.modal-icon').on('click', function() {
                 $('#modal').addClass('hide');
+                $('body').removeAttr('style');
             })
         })
     </script>
