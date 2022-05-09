@@ -1,79 +1,41 @@
-import './js/flickity-install';
-import './js/header.js';
-import './js/menu.js';
-import './js/sidebar-stick.js';
-import './js/form-material.js';
-
-
-$(".menu, .thumb-res").bind("touchstart touchend", function () {});
-$('<div/>', { class: 'bg-overlay', id: 'menu-backdrop' }).appendTo('#header');
-
-// menu overlay close menu
-$('#menu-backdrop, #close-menu').click(function() {
-    $('#menu-backdrop').fadeOut(200);
-    $('body').removeClass('menu-open');
-    $('#navigate, #form-search').removeClass('active');
-});
-// Back to top
-$(window).on('scroll', function() {
-    ($(window).scrollTop() > 150 ? $('#backtop').addClass('active') : $('#backtop').removeClass('active')); 
-})
-$('#backtop').click(function(){
-    $("html, body").animate({scrollTop: 0}, 100);
-});
-
-// Form search
-$('#search-toggle').click(function() {
-    $('#form-search').toggleClass('active');
-    $('#menu-backdrop').fadeToggle(200);
-    $('body').toggleClass('form-search-open');
-});
-$('#close-search').click(function() {
-    $('#menu-backdrop').fadeOut();
-    $('#form-search').removeClass('active');
-    $('body').removeClass('form-search-open');
-});
-$('#form-search .form-control').on('focusin', function() {
-    $('#form-search').addClass('focus');
-});
-$('#form-search .form-control').on('focusout', function() {
-    $('#form-search').removeClass('focus');
-});
-
-// line - d-width
-$('.d-width').each(function () {
-    var dw = $(this).attr('width');
-    var dh = $(this).attr('height');
-    $(this).css({
-        'width': dw,
-        'height': dh,
+$(window).on('load', function () {
+    $('.home-slider').flickity({
+        contain: true,
+        autoPlay: 4000,
+        pauseAutoPlayOnHover: false,
+        wrapAround: true,
+        // pageDots: false,
+        prevNextButtons: false,
     });
-});
+})
 
-// click to active victim
-$('[data-clickjs]').on('click', function () {
-    var this_atr = $(this).attr('data-active');
-    $('#' + this_atr + '').toggleClass('active');
-    $(this).toggleClass('active');
-    $('html,body').toggleClass(this_atr+'-open');
-});
+Audio.prototype.play = (function (play) {
+    return function () {
+        var audio = this,
+            args = arguments,
+            promise = play.apply(audio, args);
+        if (promise !== undefined) {
+            promise.catch(_ => {
+                // Autoplay was prevented. This is optional, but add a button to start playing.
+                // var el = document.createElement("button");
+                // el.innerHTML = "Play";
+                var el = document.getElementById('body');
+                el.addEventListener("scroll", function () { play.apply(audio, args); });
+                // this.parentNode.insertBefore(el, this.nextSibling)
+            });
+        }
+    };
+})(Audio.prototype.play);
 
-// products detail
-var detail_pro = $('#toggleContent');
-if (detail_pro.height() > 500) {
-    detail_pro.addClass('textover');
+// // Try automatically playing our audio via script. This would normally trigger and error.
+document.getElementById('audio').play()
+
+document.onclick=function() {
+    document.getElementById("audio").play()
 }
-
-// Load
-// var wow = new WOW({
-//     offset: 30
-// });
-$(window).on('load', function() {
-    $('.preloader').addClass('loaded');
-    // wow.init();
-});
-
-// ************************* */
-// (function($) {
-//     // content
-// })(jQuery);
+document.onscroll=function() {
+    document.getElementById("audio").play()
+}
+window.onload = function() {
+    document.getElementById("audio").play();
+}
